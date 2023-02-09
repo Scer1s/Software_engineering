@@ -10,16 +10,22 @@ This product is meant to help discord users and make it easier to find previous 
 
 ## Stakeholders and their Interests 
 
-### Software Developer(s)
+### Software Developers
 
 * Cheap software
 * Easy to develop
 * Simple to delpoy
 
-### Users
+### Discord Moderators
 
 * Free
+* Easily configurable
+* No overlap with other bots
+
+### Discord Users
+
 * Easy to use
+* Accurate
 
 ## Personas
 
@@ -27,9 +33,9 @@ This product is meant to help discord users and make it easier to find previous 
 
 Jill is a college student that is constantly working on different coding project weather they be school related or just personal projects. She often uses discord to communicate to her school thanks to the server her school started. She also uses it to talk to other friends with more programming experience than her when she needs help. Many of her friends ask her for help when they are stuck as well. 
 
-### Persona #2
+### Barry Burton - Moderator (Written by Nick C.)
 
-[Backstory]
+Barry is a moderator for a decently sized, public Discord server.  He uses discord regularly to interact with the members of his server.  He is very comfortable using discord.  He is willing to add new bots if he thinks the server could use their functionality.
 
 ### Persona #3
 
@@ -45,13 +51,13 @@ Jill is working on homework one day and a friend asks her for help in another cl
 
 Jill is working on a personal coding project and wants something to listen to. She and her friends often share music over discord and listen to things that they all like. However there’s a mountain of messages that come with this stuff. So she uses the bot to be able to look at all the links that have been shared in the discord chat and puts what she wants into a playlist.
 
-### User Story #3
+### User Story #3 (Written by Nick C.)
 
-[Story]
+Barry is moderating a discord server and realizes that people are spamming the same videos over and over.  He doesn't want the bot to fill up the database with a bunch of the video.  So he configures the bot to add a delay.
 
-### User Story #4
+### User Story #4 (Written by Nick C.)
 
-[Story]
+Barry is setting up roles for a discord server and doesn't want new people to have access to everything yet.  One of the things he wants to limit is the use of the bot.  Luckily the bot is easily configurable.  So he changes the bot so that it doesn't allow certain roles to use it.
 
 ### User Story #5
 
@@ -63,7 +69,7 @@ Jill is working on a personal coding project and wants something to listen to. S
 
 ## Use Case Diagrams
 
-![Alt text]([Diagram File] "Use Case Diagrams")
+![Alt text]([InsertDiagramFileHere] "Use Case Diagrams")
 
 ## Requirements
 
