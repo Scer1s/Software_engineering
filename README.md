@@ -38,7 +38,7 @@ Jill is a college student that is constantly working on different coding project
 Barry is a moderator for a decently sized, public Discord server.  He uses discord regularly to interact with the members of his server.  He is very comfortable using discord.  He is willing to add new bots if he thinks the server could use their functionality.
 
 ### Persona #3
-### Chris Redfield (content creator): 
+### Chris Redfield - Content Creator (Written by Sceris W.): 
 Chris Redfield is a hip kid trying to start up his career as a content creator. He generally keeps a large community in a discord server and actively tries to moderate and improve his server when he can.
 
 ## User Stories
