@@ -37,8 +37,8 @@ Jill is a college student that is constantly working on different coding project
 
 Barry is a moderator for a decently sized, public Discord server.  He uses discord regularly to interact with the members of his server.  He is very comfortable using discord.  He is willing to add new bots if he thinks the server could use their functionality.
 
-### Persona #3
-### Chris Redfield - Content Creator (Written by Sceris W.): 
+### Chris Redfield - Content Creator (Written by Sceris W.)
+
 Chris Redfield is a hip kid trying to start up his career as a content creator. He generally keeps a large community in a discord server and actively tries to moderate and improve his server when he can.
 
 ## User Stories
@@ -61,10 +61,11 @@ Barry is setting up roles for a discord server and doesn't want new people to ha
 
 ### User Story #5 (Written by Sceris W.)
 
-User story 1 : Mr. Redfield was interacting with his community one day and needed good ways to show off content from both himself and other creators, but found it cumbersome when trying to remember the urls and keywords for them. Ever since he started using the bot, he’s able to keep a good log of the videos he has sent in the past.
+Mr. Redfield was interacting with his community one day and needed good ways to show off content from both himself and other creators, but found it cumbersome when trying to remember the urls and keywords for them. Ever since he started using the bot, he’s able to keep a good log of the videos he has sent in the past.
+
 ### User Story #6 (Written by Sceris W.)
 
-User story 2: One day while moderating his discord server, Mr. Redfield was having people come to him about a user who was being problematic. When Mr. Redfield tried to find evidence of the claims, he found himself incapable of doing so. Now he uses the discord bot which automatically logs every message sent as well as it’s sender, even if it is deleted.
+One day while moderating his discord server, Mr. Redfield was having people come to him about a user who was being problematic. When Mr. Redfield tried to find evidence of the claims, he found himself incapable of doing so. Now he uses the discord bot which automatically logs every message sent as well as it’s sender, even if it is deleted.
 
 ## Use Case Diagrams
 
@@ -74,12 +75,17 @@ User story 2: One day while moderating his discord server, Mr. Redfield was havi
 
 ### Functional
 
-[Requirements]
+* Users should be able to narrow their search through multiple different constraints
+* Users should be able to lookup videos for other users without notifying that user
+* Moderators should be able to modify which roles can use certain features of the bot
+* Moderators should be able to see who has used certain features and when
 
 ### Non-Functional
 
-[Requirements]
+* All interactions should be near instantaneous (~200ms)
+* Bot commands should provide a description of what they do
+* User personas will not be able to use admin commands without proper roles
 
 ### Non-Requirements
 
-[Requirements]
+* Requires a stable connection to Discord
