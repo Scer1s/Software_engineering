@@ -69,7 +69,8 @@ One day while moderating his discord server, Mr. Redfield was having people come
 
 ## Use Case Diagrams
 
-![Alt text]([InsertDiagramFileHere] "Use Case Diagrams")
+![image](https://user-images.githubusercontent.com/91082230/218208661-d93129ab-931c-4049-8717-1f83fc357492.png)
+
 
 ## Requirements
 
