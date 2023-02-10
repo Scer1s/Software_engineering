@@ -61,10 +61,10 @@ Barry is setting up roles for a discord server and doesn't want new people to ha
 
 ### User Story #5 (Written by Sceris W.)
 
-User story 1 : Mr. Booth was interacting with his community one day and needed good ways to show off content from both himself and other creators, but found it cumbersome when trying to remember the urls and keywords for them. Ever since he started using the bot, he’s able to keep a good log of the videos he has sent in the past.
+User story 1 : Mr. Redfield was interacting with his community one day and needed good ways to show off content from both himself and other creators, but found it cumbersome when trying to remember the urls and keywords for them. Ever since he started using the bot, he’s able to keep a good log of the videos he has sent in the past.
 ### User Story #6 (Written by Sceris W.)
 
-User story 2: One day while moderating his discord server, Mr. Booth was having people come to him about a user who was being problematic. When Mr. Booth tried to find evidence of the claims, he found himself incapable of doing so. Now he uses the discord bot which automatically logs every message sent as well as it’s sender, even if it is deleted.
+User story 2: One day while moderating his discord server, Mr. Redfield was having people come to him about a user who was being problematic. When Mr. Redfield tried to find evidence of the claims, he found himself incapable of doing so. Now he uses the discord bot which automatically logs every message sent as well as it’s sender, even if it is deleted.
 
 ## Use Case Diagrams
 
