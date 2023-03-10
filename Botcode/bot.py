@@ -1,10 +1,7 @@
 import discord
 from discord.ext import commands, tasks
-import random
 from itertools import cycle
-import sqlite3
 import sys
-import datetime
 import asyncio
 import pprint
 import time
