@@ -16,5 +16,6 @@ async def on_ready():
 	change_status.start()
 	print('Bot is ready.')
 
+#CODE GOES HERE
   
   client.run('NjM1ODc3NjcxNzgzNjI4ODE0.Xa3dOg.iwsKYUnQZNFsugzVlG2-fBKuYy8') #Botkey (replace with secret botkey)
