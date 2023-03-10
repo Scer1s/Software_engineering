@@ -4,7 +4,7 @@ from itertools import cycle
 import sys
 import asyncio
 import pprint
-import time
+
 
 client = commands.Bot(command_prefix = '.')  #Bot command prefix such as .kick or .command
 
