@@ -17,4 +17,4 @@ async def on_ready():
 	print('Bot is ready.')
 
   
-  client.run('NjM1ODc3NjcxNzgzNjI4ODE0.Xa3dOg.iwsKYUnQZNFsugzVlG2-fBKuYy8') #Botkey
+  client.run('NjM1ODc3NjcxNzgzNjI4ODE0.Xa3dOg.iwsKYUnQZNFsugzVlG2-fBKuYy8') #Botkey (replace with secret botkey)
