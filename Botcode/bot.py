@@ -16,7 +16,7 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN BEFORE TESTING
-    TOKEN = 'MTA5MDY5Mzc1OTU1NTA5MjYxMA.GbBhZJ.xDMIO31_BN2IPOUBrA7nByvB91aH92smc14kPM' #DO NOT POST THIS ANYWHERE
+    TOKEN = '' #DO NOT POST THIS ANYWHERE
     intents = discord.Intents.all() #intents are new security features in discord, ask sceris before fucking with this
     intents.message_content = True
     client = discord.Client(intents=intents)
