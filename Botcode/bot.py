@@ -5,7 +5,7 @@ import json
 
 async def send_message(message, user_message, is_private):
     try:
-        response = responses.get_response(user_message)
+        response = responses.get_response(message, user_message)
         if response == 'Undef resp':
             pass
         else:
