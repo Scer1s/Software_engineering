@@ -1,6 +1,6 @@
 import discord
 import responses
-
+import json
 
 
 async def send_message(message, user_message, is_private):
@@ -17,7 +17,9 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN BEFORE TESTING
-    TOKEN = '' #DO NOT POST THIS ANYWHERE
+    with open('config.json', 'r') as cfg:
+        data = json.load(cfg)
+    TOKEN = data["BOTTOKEN"]
     intents = discord.Intents.all() #intents are new security features in discord, ask sceris before fucking with this
     intents.message_content = True
     client = discord.Client(intents=intents)
