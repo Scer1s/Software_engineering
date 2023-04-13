@@ -46,13 +46,12 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
             user_message = user_message[1:]
             await send_message(message, user_message, is_private=True)
         else:
-            db = sqlite3.connect('message.sqlite')
-            cursor = db.cursor()
-            cursor.execute("INSERT INTO Main (Channel, Name, Message) VALUES ( ?, ?, ?)",
-		(channel, username, user_message))
-            db.commit()
-            cursor.close()
-            db.close()
+            db = sqlite3.connect('message.sqlite') #Opens database
+            cursor = db.cursor() #Creates cursor (cursors are used to place data into databases)
+            cursor.execute("INSERT INTO Main (Channel, Name, Message) VALUES ( ?, ?, ?)", (channel, username, user_message)) #puts data into database
+            db.commit() #commits changes
+            cursor.close() #closes cursor (IMPORTANT)
+            db.close() #closes database (IMPORTANT)
             await send_message(message, user_message, is_private=False)
 
     client.run(TOKEN)
