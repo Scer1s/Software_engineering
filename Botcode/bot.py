@@ -3,6 +3,9 @@ from discord import app_commands
 from discord.ext import commands
 import responses
 import json
+import sqlite3
+import requests
+from bs4 import BeautifulSoup
 
 
 async def send_message(message, user_message, is_private):
@@ -77,6 +80,12 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
             db.close()
             print("Youtube video saved to database")
         else:
+            db = sqlite3.connect('message.sqlite') #Opens database
+            cursor = db.cursor() #Creates cursor (cursors are used to place data into databases)
+            cursor.execute("INSERT INTO Main (Channel, Name, Message) VALUES ( ?, ?, ?)", (channel, username, user_message)) #puts data into database
+            db.commit() #commits changes
+            cursor.close() #closes cursor (IMPORTANT)
+            db.close() #closes database (IMPORTANT)
             await send_message(message, user_message, is_private=False)
 
 
