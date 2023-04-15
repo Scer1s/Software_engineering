@@ -1,6 +1,8 @@
 import random
 import discord
 
+    
+
 def get_response(ctx, message): #gets the response from defined code
     p_message = message.lower()
 

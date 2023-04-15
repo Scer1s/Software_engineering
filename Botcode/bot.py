@@ -1,9 +1,9 @@
 import discord
+from discord import app_commands
+from discord.ext import commands
 import responses
 import json
-import sqlite3
-import requests
-from bs4 import BeautifulSoup
+
 
 async def send_message(message, user_message, is_private):
     try:
@@ -17,19 +17,27 @@ async def send_message(message, user_message, is_private):
         #print(e) for debugging
         pass
 
+
+
 def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN BEFORE TESTING
     with open('config.json', 'r') as cfg:
         data = json.load(cfg)
     TOKEN = data["BOTTOKEN"]
     print(TOKEN)
-    
-    intents = discord.Intents.all() #intents are new security features in discord, ask sceris before fucking with this
-    intents.message_content = True
-    client = discord.Client(intents=intents)
+    client = commands.Bot(command_prefix="!", intents = discord.Intents.all())
 
     @client.event #handles startup sequence and connects it to a database
     async def on_ready():
         print(f'{client.user} is locked and loaded B)')
+        try:
+            synced = await client.tree.sync()
+            print(f"Synced {len(synced)} commands(s)")
+        except Exception as e:
+            print(e)
+
+    @client.tree.command(name="hello")
+    async def hello(interaction: discord.Interaction):
+        await interaction.response.send_message(f"Hey {interaction.user.mention}! This is a slash command!")
 
 
     @client.event #handles messages
@@ -69,12 +77,7 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
             db.close()
             print("Youtube video saved to database")
         else:
-            db = sqlite3.connect('message.sqlite') #Opens database
-            cursor = db.cursor() #Creates cursor (cursors are used to place data into databases)
-            cursor.execute("INSERT INTO Main (Channel, Name, Message) VALUES ( ?, ?, ?)", (channel, username, user_message)) #puts data into database
-            db.commit() #commits changes
-            cursor.close() #closes cursor (IMPORTANT)
-            db.close() #closes database (IMPORTANT)
             await send_message(message, user_message, is_private=False)
+
 
     client.run(TOKEN)
