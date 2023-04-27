@@ -22,12 +22,14 @@ async def send_message(message, user_message, is_private):
 
 
 
-def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN BEFORE TESTING
+def run_discord_bot():
     with open('config.json', 'r') as cfg:
         data = json.load(cfg)
     TOKEN = data["BOTTOKEN"]
     print(TOKEN)
-    client = commands.Bot(command_prefix="!", intents = discord.Intents.all())
+    intents = discord.Intents.default()
+    intents.message_content = True
+    client = commands.Bot(command_prefix="!", intents = intents)
 
     @client.event #handles startup sequence and connects it to a database
     async def on_ready():
@@ -42,6 +44,18 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
     async def hello(interaction: discord.Interaction):
         await interaction.response.send_message(f"Hey {interaction.user.mention}! This is a slash command!")
 
+    @client.tree.command(name="search")
+    @app_commands.describe(search_argument = "What to search for?")
+    async def search(ctx, search_argument: str):
+        db = sqlite3.connect('message.sqlite')
+        cursor = db.cursor()
+        cursor.execute(f"SELECT Title, Link FROM Videos WHERE Message LIKE '%{search_argument}%'")
+        rows = cursor.fetchall()
+        result = ''
+        for row in rows:
+            result = result + row[0] + "\n" + row[1] + '\n'
+            #print(row[0] + "\n" + row[1])
+        await ctx.response.send_message(result)
 
     @client.event #handles messages
     async def on_message(message):
@@ -62,7 +76,10 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
             link_start_index = user_message.find("https://www.youtube.com/watch?v=") #Determines where the youtube link starts in the message
             msg_after_link = user_message[link_start_index:].split(" ", 1) #Separates the video link and the rest of the message
             youtube_link = msg_after_link[0] #Isolates the youtube link into one variable
-            msg_without_link = user_message[:link_start_index] + "[LINK] " + msg_after_link[1] #Combines the message before and after the youtube link into one string
+            if not msg_after_link[1]:
+                msg_without_link = user_message[:link_start_index] + "[LINK] " #Combines the messages
+            else:
+                msg_without_link = user_message[:link_start_index] + "[LINK] " + msg_after_link[1]
             r = requests.get(youtube_link) #The start of grabbing the title from the youtube link
             soup = BeautifulSoup(r.text, features="html.parser")
             link = soup.find_all(name="title")[0]
