@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 async def send_message(message, user_message, is_private):
     try:
         response = responses.get_response(message, user_message)
+        if response == "PROFANE":
+            await message.delete()
         if response == 'Undef resp':
             pass
         else:
