@@ -1,5 +1,7 @@
 import random
 import discord
+import joblib
+from profanity_check import predict, predict_prob
 
 msglist = ["Bababooey",
            "How can I help?",
@@ -16,8 +18,10 @@ msglist = ["Bababooey",
 
 def get_response(ctx, message): #gets the response from defined code
     p_message = message.lower()
-
-    if p_message == 'hello':
+    pcheck = ([p_message])
+    if  predict(pcheck) == [1]:
+        return "PROFANE"
+    elif p_message == 'hello':
         return 'Sup'
     elif p_message == 'roll':
         return str(random.randint(1,6))
@@ -37,5 +41,3 @@ def get_response(ctx, message): #gets the response from defined code
             return choice
     
     return
-
-
