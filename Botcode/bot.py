@@ -41,6 +41,15 @@ def run_discord_bot(): #DELETE TOKEN BEFORE PUSHING TO GITHUB AND PUT IT BACK IN
     @client.tree.command(name="hello")
     async def hello(interaction: discord.Interaction):
         await interaction.response.send_message(f"Hey {interaction.user.mention}! This is a slash command!")
+        
+
+    @client.hybrid_command(description='Tells us the bot ping')
+    async def ping(ctx):
+        await ctx.send(f'Ping {round(client.latency *1000)}ms')
+
+    @client.hybrid_command(description='Searches for selected users')
+    async def look(ctx, member:discord.Member):
+        await ctx.send(f'{member:discord.Member}')
 
 
     @client.event #handles messages
