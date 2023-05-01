@@ -35,7 +35,9 @@ def get_response(ctx, message): #gets the response from defined code
         result = (f'You are {ctx.author.mention}. \nYou joined Discord on {ctx.author.created_at.strftime("%a, %b %#d, %Y")}\nYou joined this server on {ctx.author.joined_at.strftime("%a, %b %#d, %Y")}')
         return result
     else:
-        if(random.randint(0,20) <= 1):
+        rando = random.randint(0,20)
+        #print(rando)
+        if(rando <= 1):
             choice = random.choice(msglist)
             print(choice)
             return choice
