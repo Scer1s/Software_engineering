@@ -4,8 +4,8 @@ from discord.ext import commands
 import responses
 import json
 import sqlite3
-import requests
-from bs4 import BeautifulSoup
+#import requests
+#from bs4 import BeautifulSoup
 
 
 async def send_message(message, user_message, is_private):
@@ -51,9 +51,15 @@ def run_discord_bot():
     async def ping(ctx):
         await ctx.send(f'Ping {round(client.latency *1000)}ms')
 
-    @client.hybrid_command(description='Searches for selected users')
-    async def look(ctx, member:discord.Member):
-        await ctx.send(f'{member:discord.Member}')
+    @client.hybrid_command(description='Lists bot uses')
+    async def bothelp(ctx):
+        await ctx.send(f'This is school bot, a bot designed to help users in a verity of ways and has multipul commands that can be used that are listed below.'
+                       'Another function of this bot is that it will take videos you post and store them in a database so even if you delete them they will still be in the database.'
+                       'This is supposed to be a tool to help moderators catch people who upload inappropriate links and videos. So just be warned, Big Brother is watching you. Enjoy.\n \n'
+                       'Response commands:\n hello\n roll\n -youtube\n -codehelp\n whoami\n \n'
+                       'Slash commands:\n hello\n ping\n search\n')
+        
+        
 
     @client.tree.command(name="search")
     @app_commands.describe(search_argument = "What to search for?")
