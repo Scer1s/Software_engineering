@@ -4,8 +4,8 @@ from discord.ext import commands
 import responses
 import json
 import sqlite3
-#import requests
-#from bs4 import BeautifulSoup
+import requests
+from bs4 import BeautifulSoup
 
 
 async def send_message(message, user_message, is_private):
